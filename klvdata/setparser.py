@@ -30,6 +30,8 @@ from collections import OrderedDict
 from klvdata.element import Element
 from klvdata.element import UnknownElement
 from klvdata.klvparser import KLVParser
+from klvdata.klvencoder import KLVEncoder
+from klvdata.common import ber_encode
 
 
 class SetParser(Element, metaclass=ABCMeta):
@@ -63,6 +65,10 @@ class SetParser(Element, metaclass=ABCMeta):
             except KeyError:
                 self.items[key] = self._unknown_element(key, value)
 
+    def encode(self, dst_stream):
+        encoder = KLVEncoder(dst_stream)
+        encoder.write(bytes(self))
+
     @classmethod
     def add_parser(cls, obj):
         """Decorator method used to register a parser to the class parsing repertoire.
@@ -92,6 +98,13 @@ class SetParser(Element, metaclass=ABCMeta):
     def parsers(cls):
         # Property must define __setitem__
         pass
+
+    def __bytes__(self):
+        """Return the MISB encoded representation of a Key, Length, Value element."""
+        items_bytes = bytes()
+        for item in self.items.values():
+            items_bytes += bytes(item)
+        return bytes(self.key) + bytes(ber_encode(len(items_bytes))) + items_bytes
 
     def __repr__(self):
         return pformat(self.items, indent=1)
