@@ -1,7 +1,8 @@
 repo_name: edgybees/klvdata
 report_id: 78f6e139748f27cc75b43c7a5d38916d
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-13T13:36:31+00:00'
+timestamp: '2024-01-05T08:46:15+00:00'
 requested_by: paretech
 provider: github
 branch: master
@@ -16,6 +17,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/993/pUBY5pVj.png
+  detection_source_url: https://github.com/edgybees/klvdata
   detection_source: Repo Metadata
 - name: Git
   description: Fast, scalable, distributed revision control system
@@ -25,6 +27,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/edgybees/klvdata
   detection_source: Repo Metadata
 - name: PyPI
   description: A repository of software for the Python programming language
@@ -34,6 +37,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Hosted Package Repository
   image_url: https://img.stackshare.io/service/12572/-RIWgodF_400x400.jpg
+  detection_source_url: https://github.com/edgybees/klvdata/blob/master/requirements/ci.pip
   detection_source: requirements/ci.pip
   last_updated_by: paretech
   last_updated_on: 2017-09-09 12:08:43.000000000 Z
@@ -46,6 +50,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Continuous Integration
   image_url: https://img.stackshare.io/service/460/Lu6cGu0z_400x400.png
+  detection_source_url: https://github.com/edgybees/klvdata/blob/master/.travis.yml
   detection_source: ".travis.yml"
   last_updated_by: paretech
   last_updated_on: 2017-09-08 20:48:30.000000000 Z
